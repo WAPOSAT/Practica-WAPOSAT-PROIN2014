@@ -1,0 +1,40 @@
+// www.internetdelascosas.cl
+//
+// Sketch mide la temperatura con un sensor LM35
+// y la envia a un servidor remoto
+//
+// contacto@internetdelascosas.cl
+//
+
+#include <SPI.h>
+float value;
+
+// Definicion de pines
+
+const int inPin0 = 0;  // sensor conectado a la entrada analoga 0
+const int inPin1 = 1;  // sensor conectado a la entrada analoga 1
+const int inPin2 = 2;  // sensor conectado a la entrada analoga 2
+const int inPin3 = 3;  // sensor conectado a la entrada analoga 3
+const int inPin4 = 4;  // sensor conectado a la entrada analoga 4
+
+void setup()
+{
+  Serial.begin(9600);
+  delay(1000); // espera 1 segundo despues de inicializar
+  
+}
+
+void loop()
+{
+  int val=analogRead(inPin0);
+  Serial.println(val);
+  Serial.println(val,BIN);
+//  int numero = -1;
+  
+//  for (int i=-2;i<=2;i++)
+//  {
+//    Serial.println(i);
+//    Serial.println(i,BIN);
+    delay(3000); // espera 5 minutos antes de volver a sensar
+  //}
+}
